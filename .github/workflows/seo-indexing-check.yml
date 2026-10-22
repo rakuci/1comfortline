@@ -52,5 +52,21 @@ jobs:
         run: pnpm run typecheck:libs
       - name: Typecheck website
         run: pnpm --filter @workspace/comfortline-website run typecheck
-      - name: Build and prerender website
-        run: pnpm --filter @workspace/comfortline-website run build
+      - name: Bundle website (skip unrelated image regeneration)
+        run: pnpm --filter @workspace/comfortline-website exec vite build --config vite.config.ts
+      - name: Prerender route HTML
+        run: pnpm --filter @workspace/comfortline-website exec node scripts/prerender.mjs
+      - name: Validate generated canonical, hreflang and H1
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from "node:assert/strict";
+          import { readFileSync } from "node:fs";
+          for (const route of ["/трансфер-минск-краков", "/трансфер-минск-юрмала", "/лыжный-трансфер", "/minsk-wroclaw-transfer"]) {
+            const html = readFileSync("artifacts/comfortline-website/dist/public/" + route.slice(1) + "/index.html", "utf8");
+            assert(html.includes('<link rel="canonical" href="https://comfortline.by' + encodeURI(route) + '"'), "Wrong canonical: " + route);
+            assert(html.includes('<link rel="alternate" hreflang="ru"'), "Missing RU hreflang: " + route);
+            assert(html.includes('<link rel="alternate" hreflang="en"'), "Missing EN hreflang: " + route);
+            assert(/<h1\b/i.test(html), "Missing prerendered H1: " + route);
+          }
+          console.log("PASS: prerendered canonical, hreflang and H1 on priority routes");
+          NODE
