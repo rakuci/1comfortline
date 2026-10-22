@@ -269,8 +269,18 @@ const server = http.createServer((req, res) => {
       const mime = MIME[ext] ?? "application/octet-stream";
       // Hashed assets (Vite appends content hash) can be cached forever.
       // HTML must revalidate so users always get the latest app shell.
-      const cache = ext === ".html" ? "no-cache" : "public, max-age=31536000, immutable";
-      res.writeHead(200, { "Content-Type": mime, "Cache-Control": cache });
+      // Search-control documents must always revalidate. Long-lived immutable caching
+      // is safe only for hashed Vite assets, never for sitemaps, robots or RSS.
+      const hasContentHash = /-[a-f0-9]{8,}\.(?:js|css|woff2?|png|jpe?g|webp|svg)$/i.test(path.basename(filePath));
+      const cache = hasContentHash
+        ? "public, max-age=31536000, immutable"
+        : /\.(?:xml|txt|html|json)$/i.test(filePath)
+          ? "public, max-age=0, must-revalidate"
+          : "public, max-age=86400";
+      const extraHeaders = path.basename(filePath) === "feed.xml"
+        ? { "X-Robots-Tag": "noindex" }
+        : {};
+      res.writeHead(200, { "Content-Type": mime, "Cache-Control": cache, ...extraHeaders });
       fs.createReadStream(filePath).pipe(res);
       return;
     }
@@ -293,6 +303,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(status, {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "no-cache",
+      ...(status === 404 ? { "X-Robots-Tag": "noindex" } : {}),
     });
 
     res.end(html);
