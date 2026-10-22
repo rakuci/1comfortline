@@ -21,14 +21,14 @@ const data: RoutePageData = {
     howTitle: "Как проходит поездка",
     steps: [
       { icon: MapPin, title: "Выезд из Минска", desc: "Водитель заберёт вас по указанному адресу в Минске и направится к польской границе по оптимальному маршруту." },
-      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Переход Брузги / Кузница или Берёза / Половцы. Водитель знает актуальные очереди и помогает на КПП." },
+      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Возможные КПП: Брест / Тересполь, Брузги / Кузница или Берестовица / Бобровники (по текущим правилам допуска автомобиля). Песчатка / Половцы закрыт." },
       { icon: Building2, title: "Познань: любой адрес", desc: "Довезём до отеля у Старого рынка, аэропорта POZ или любого другого адреса в городе." },
     ],
     infoTitle: "Детали маршрута",
     infoRows: [
       { label: "Маршрут", value: "Минск → Брест → Тересполь → Варшава → Познань" },
       { label: "Расстояние", value: "~700 км" },
-      { label: "Пограничный переход", value: "Брузги / Кузница или Берёза / Половцы (Беларусь–Польша)" },
+      { label: "Пограничный переход", value: "Брест / Тересполь, Брузги / Кузница либо Берестовица / Бобровники — по доступности" },
       { label: "Время пересечения границы", value: "1–8 ч в зависимости от сезона и очереди" },
       { label: "Необходимые документы", value: "Виза Шенген, загранпаспорт" },
       { label: "Аэропорт Познани", value: "POZ (им. Генрика Венявского) — 7 км от центра" },
@@ -53,7 +53,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Часто задаваемые вопросы",
     faq: [
-      { q: "Какой маршрут до Познани?", a: "Едем через Брест — КПП Брузги/Кузница или Берёза/Половцы — Варшаву — Познань. Расстояние около 700 км, время в пути 7–10 ч без учёта границы." },
+      { q: "Какой маршрут до Познани?", a: "Маршрут через Брест / Тересполь и Варшаву является одним из вариантов. КПП выбираем по текущему режиму и допуску пассажирского автомобиля. Песчатка / Половцы официально закрыт; пограничное ожидание заранее не гарантируем." },
       { q: "Нужна ли виза в Польшу?", a: "Гражданам Беларуси требуется шенгенская виза. Уточняйте актуальные требования в посольстве Польши или на официальных сайтах перед поездкой." },
       { q: "Что такое «козлы на Ратуше»?", a: "Каждый день в полдень из башни Ратуши Познани выезжают два механических козла и бьют рогами. Это символ города с XVI века — одна из самых любимых туристических традиций Польши." },
       { q: "Можно ли заехать в Варшаву по дороге?", a: "Да, маршрут проходит через Варшаву. Остановка добавляет минимум времени — договоритесь с менеджером при бронировании." },
@@ -84,14 +84,14 @@ const data: RoutePageData = {
     howTitle: "How the transfer works",
     steps: [
       { icon: MapPin, title: "Departure from Minsk", desc: "Your driver picks you up at your Minsk address and heads for the Polish border via the fastest route." },
-      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Bruzgi / Kuźnica or Berёza / Połowce crossing. Your driver knows current queue conditions and assists at the checkpoint." },
+      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Possible checkpoints: Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki (subject to vehicle eligibility). Pieszczatka / Połowce is suspended." },
       { icon: Building2, title: "Poznań — any address", desc: "We drop you at your hotel near the Old Market Square, Poznań Airport (POZ) or any other address in the city." },
     ],
     infoTitle: "Route Details",
     infoRows: [
       { label: "Route", value: "Minsk → Brest → Terespol → Warsaw → Poznań" },
       { label: "Distance", value: "~700 km" },
-      { label: "Border crossing", value: "Bruzgi / Kuźnica or Berёza / Połowce (Belarus–Poland)" },
+      { label: "Border crossing", value: "Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki — subject to access" },
       { label: "Border crossing time", value: "1–8 hrs depending on season and queues" },
       { label: "Documents required", value: "Schengen visa, valid passport" },
       { label: "Poznań Airport", value: "POZ (Henryk Wieniawski Airport) — 7 km from the centre" },
@@ -116,7 +116,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Frequently asked questions",
     faq: [
-      { q: "What is the route to Poznań?", a: "We go via Brest – Bruzgi/Kuźnica or Berёza/Połowce border crossing – Warsaw – Poznań. Total distance is about 700 km, travel time 7–10 hours excluding the border stop." },
+      { q: "What is the route to Poznań?", a: "Travel via Brest / Terespol and Warsaw is one possibility. We select the checkpoint based on current rules and vehicle eligibility. Pieszczatka / Połowce remains suspended and border waiting times cannot be guaranteed." },
       { q: "Do I need a visa to enter Poland?", a: "Citizens of Belarus require a Schengen visa. Please check the latest requirements with the Polish embassy or official sources before travelling." },
       { q: "What are the famous billy goats of Poznań?", a: "Every day at noon, two mechanical billy goats emerge from the Town Hall tower and butt heads — a tradition dating back to the 16th century and one of Poland's most beloved tourist rituals." },
       { q: "Can we stop in Warsaw on the way?", a: "Yes — the route passes through Warsaw, so a stop adds very little extra time. Let the manager know when booking." },
