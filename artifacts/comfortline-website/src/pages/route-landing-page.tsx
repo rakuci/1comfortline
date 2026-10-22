@@ -88,6 +88,12 @@ const BORDER_SOURCES = [
 // Curated, relevant internal links help visitors explore genuinely related routes.
 // Keep paired RU/EN URLs (rather than linking every page to every other page).
 const RELATED_ROUTES: Record<string, { ru: string; en: string; pathRu: string; pathEn: string }[]> = {
+  "/лыжный-трансфер": [
+    { ru: "Минск — Краков (Польша)", en: "Minsk — Kraków (Poland)", pathRu: "/трансфер-минск-краков", pathEn: "/minsk-krakow-transfer" },
+    { ru: "Минск — Катовице", en: "Minsk — Katowice", pathRu: "/трансфер-минск-катовице", pathEn: "/minsk-katowice-transfer" },
+    { ru: "Групповой трансфер", en: "Group transfer", pathRu: "/групповой-трансфер", pathEn: "/group-transfer" },
+    { ru: "Трансферы в Польшу", en: "Poland transfers", pathRu: "/трансфер-в-польшу", pathEn: "/poland-transfer" },
+  ],
   "/трансфер-минск-юрмала": [
     { ru: "Минск — Рига (аэропорт RIX)", en: "Minsk — Riga Airport (RIX)", pathRu: "/трансфер-минск-рига-аэропорт", pathEn: "/minsk-riga-airport" },
     { ru: "Минск — Вентспилс", en: "Minsk — Ventspils", pathRu: "/трансфер-минск-вентспилс", pathEn: "/minsk-ventspils-transfer" },
