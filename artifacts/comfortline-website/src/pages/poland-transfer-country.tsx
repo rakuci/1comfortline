@@ -109,7 +109,7 @@ const data: CountryPageData = {
     ],
     infoTitle: "Полезная информация",
     infoRows: [
-      { label: "Пограничный переход", value: "Брузги / Кузница или Берёза / Половцы (Беларусь–Польша)" },
+      { label: "Пограничный переход", value: "Брест / Тересполь, Брузги / Кузница или Берестовица / Бобровники — по доступности" },
       { label: "Время на границе", value: "1–8 ч в зависимости от сезона и очереди" },
       { label: "Необходимые документы", value: "Шенгенская виза, загранпаспорт" },
       { label: "Валюта", value: "Польский злотый (PLN)" },
@@ -240,7 +240,7 @@ const data: CountryPageData = {
     ],
     infoTitle: "Useful information",
     infoRows: [
-      { label: "Border crossing", value: "Bruzgi / Kuźnica or Byaroza / Połowce (Belarus–Poland)" },
+      { label: "Border crossing", value: "Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki — subject to access" },
       { label: "Border crossing time", value: "1–8 hrs depending on season and queues" },
       { label: "Documents required", value: "Schengen visa, valid passport" },
       { label: "Currency", value: "Polish złoty (PLN)" },
