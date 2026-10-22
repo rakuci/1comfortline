@@ -21,14 +21,14 @@ const data: RoutePageData = {
     howTitle: "Как проходит поездка",
     steps: [
       { icon: MapPin, title: "Выезд из Минска", desc: "Водитель заберёт вас по указанному адресу в Минске и направится к польской границе по оптимальному маршруту." },
-      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Переход Брузги / Кузница или Берёза / Половцы. Водитель знает актуальные очереди и помогает на КПП." },
+      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Возможны Брест / Тересполь, Брузги / Кузница или Берестовица / Бобровники — только при допуске для данного автомобиля. Песчатка / Половцы закрыт; проверяем официальные правила перед подтверждением поездки." },
       { icon: Building2, title: "Вроцлав: любой адрес", desc: "Довезём до отеля у Рыночной площади, аэропорта WRO или любого другого адреса в городе." },
     ],
     infoTitle: "Детали маршрута",
     infoRows: [
       { label: "Маршрут", value: "Минск → Брест → Тересполь → Варшава → Вроцлав" },
       { label: "Расстояние", value: "~850 км" },
-      { label: "Пограничный переход", value: "Брузги / Кузница или Берёза / Половцы (Беларусь–Польша)" },
+      { label: "Пограничный переход", value: "Брест / Тересполь, Брузги / Кузница или Берестовица / Бобровники — по действующим правилам" },
       { label: "Время пересечения границы", value: "1–8 ч в зависимости от сезона и очереди" },
       { label: "Необходимые документы", value: "Виза Шенген, загранпаспорт" },
       { label: "Аэропорт Вроцлава", value: "WRO (им. Николая Коперника) — 10 км от центра" },
@@ -53,7 +53,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Часто задаваемые вопросы",
     faq: [
-      { q: "Какой маршрут до Вроцлава?", a: "Едем через Брест — КПП Брузги/Кузница или Берёза/Половцы — Варшаву — Вроцлав. Расстояние около 850 км, время в пути 9–12 ч без учёта границы." },
+      { q: "Какой маршрут до Вроцлава?", a: "Возможен маршрут через Брест / Тересполь и Варшаву. Доступные КПП и маршрут подбираются по состоянию на дату поездки: Песчатка / Половцы указан польской погранслужбой как закрытый. Время прохождения границы заранее не гарантируется." },
       { q: "Нужна ли виза в Польшу?", a: "Гражданам Беларуси требуется шенгенская виза. Уточняйте актуальные требования в посольстве Польши или на официальных сайтах перед поездкой." },
       { q: "Можно ли заехать в Варшаву по дороге?", a: "Да, возможна остановка в Варшаве. Маршрут проходит через польскую столицу, поэтому остановка почти не удлиняет поездку. Договоритесь с менеджером при бронировании." },
       { q: "Можно ли добраться до аэропорта Вроцлава WRO?", a: "Да, аэропорт Николая Коперника (WRO) находится в 10 км от центра. Укажите при бронировании — довезём прямо к терминалу." },
@@ -84,14 +84,14 @@ const data: RoutePageData = {
     howTitle: "How the transfer works",
     steps: [
       { icon: MapPin, title: "Departure from Minsk", desc: "Your driver picks you up at your Minsk address and heads for the Polish border via the fastest route." },
-      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Bruzgi / Kuźnica or Berёza / Połowce crossing. Your driver knows current queue conditions and assists at the checkpoint." },
+      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Possible crossings include Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki, subject to current vehicle access rules. Pieszczatka / Połowce is suspended." },
       { icon: Building2, title: "Wrocław — any address", desc: "We drop you at your hotel near the Market Square, Wrocław Airport (WRO) or any other address in the city." },
     ],
     infoTitle: "Route Details",
     infoRows: [
       { label: "Route", value: "Minsk → Brest → Terespol → Warsaw → Wrocław" },
       { label: "Distance", value: "~850 km" },
-      { label: "Border crossing", value: "Bruzgi / Kuźnica or Berёza / Połowce (Belarus–Poland)" },
+      { label: "Border crossing", value: "Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki — if permitted" },
       { label: "Border crossing time", value: "1–8 hrs depending on season and queues" },
       { label: "Documents required", value: "Schengen visa, valid passport" },
       { label: "Wrocław Airport", value: "WRO (Nicolaus Copernicus Airport) — 10 km from the centre" },
@@ -116,7 +116,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Frequently asked questions",
     faq: [
-      { q: "What is the route to Wrocław?", a: "We go via Brest – Bruzgi/Kuźnica or Berёza/Połowce border crossing – Warsaw – Wrocław. Total distance is about 850 km, travel time 9–12 hours excluding the border stop." },
+      { q: "What is the route to Wrocław?", a: "One route goes via Brest / Terespol and Warsaw. The checkpoint is selected according to current passenger-car rules; Pieszczatka / Połowce is listed as suspended by Polish authorities. Waiting times cannot be guaranteed." },
       { q: "Do I need a visa to enter Poland?", a: "Citizens of Belarus require a Schengen visa. Please check the latest requirements with the Polish embassy or official sources before travelling." },
       { q: "Can we stop in Warsaw on the way?", a: "Yes — the route passes through Warsaw, so a stop adds almost no extra distance. Let the manager know when booking." },
       { q: "Can you drop me at Wrocław Airport (WRO)?", a: "Yes — Nicolaus Copernicus Airport is 10 km from the city centre. Just mention it when booking and we'll take you straight to the terminal." },

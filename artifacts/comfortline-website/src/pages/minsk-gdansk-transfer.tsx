@@ -21,14 +21,14 @@ const data: RoutePageData = {
     howTitle: "Как проходит поездка",
     steps: [
       { icon: MapPin, title: "Выезд из Минска", desc: "Водитель заберёт вас по указанному адресу в Минске и направится к польской границе по оптимальному маршруту." },
-      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Переход Брузги / Кузница или Берёза / Половцы. Водитель знает актуальные очереди и помогает на КПП." },
+      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Возможные КПП: Брест / Тересполь, Брузги / Кузница или Берестовица / Бобровники (по текущим правилам допуска автомобиля). Песчатка / Половцы закрыт." },
       { icon: Anchor, title: "Гданьск: порт и старый город", desc: "Довезём до отеля в историческом центре, морского порта, порта Сопота или любого адреса в Гданьске." },
     ],
     infoTitle: "Детали маршрута",
     infoRows: [
       { label: "Маршрут", value: "Минск → Брест → Тересполь → Варшава → Гданьск" },
       { label: "Расстояние", value: "~750 км" },
-      { label: "Пограничный переход", value: "Брузги / Кузница или Берёза / Половцы (Беларусь–Польша)" },
+      { label: "Пограничный переход", value: "Брест / Тересполь, Брузги / Кузница либо Берестовица / Бобровники — по доступности" },
       { label: "Время пересечения границы", value: "1–8 ч в зависимости от сезона и очереди" },
       { label: "Необходимые документы", value: "Виза Шенген, загранпаспорт" },
       { label: "Аэропорт Гданьска", value: "GDN (им. Леха Валенсы) — 13 км от центра" },
@@ -53,7 +53,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Часто задаваемые вопросы",
     faq: [
-      { q: "Какой маршрут до Гданьска?", a: "Едем через Брест — КПП Брузги/Кузница или Берёза/Половцы — Варшаву — Гданьск. Расстояние около 750 км, время в пути 8–11 ч без учёта границы." },
+      { q: "Какой маршрут до Гданьска?", a: "Маршрут через Брест / Тересполь и Варшаву является одним из вариантов. КПП выбираем по текущему режиму и допуску пассажирского автомобиля. Песчатка / Половцы официально закрыт; пограничное ожидание заранее не гарантируем." },
       { q: "Нужна ли виза в Польшу?", a: "Гражданам Беларуси требуется шенгенская виза. Уточняйте актуальные требования в посольстве Польши или на официальных сайтах перед поездкой." },
       { q: "Можно ли заехать в Сопот или Гдыню?", a: "Да — Трёхградье (Гданьск, Сопот, Гдыня) расположено компактно. Довезём до любой точки агломерации, доплата минимальная." },
       { q: "Можно ли заехать в Варшаву по дороге?", a: "Да, возможна остановка в Варшаве. Договоритесь с менеджером при бронировании, доплата по согласованию." },
@@ -84,14 +84,14 @@ const data: RoutePageData = {
     howTitle: "How the transfer works",
     steps: [
       { icon: MapPin, title: "Departure from Minsk", desc: "Your driver picks you up at your Minsk address and heads for the Polish border via the fastest route." },
-      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Bruzgi / Kuźnica or Berёza / Połowce crossing. Your driver knows current queue conditions and assists at the checkpoint." },
+      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Possible checkpoints: Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki (subject to vehicle eligibility). Pieszczatka / Połowce is suspended." },
       { icon: Anchor, title: "Gdańsk — port & old town", desc: "We drop you at your hotel in the historic centre, the sea port, Sopot pier or any address in the Tri-City area." },
     ],
     infoTitle: "Route Details",
     infoRows: [
       { label: "Route", value: "Minsk → Brest → Terespol → Warsaw → Gdańsk" },
       { label: "Distance", value: "~750 km" },
-      { label: "Border crossing", value: "Bruzgi / Kuźnica or Berёza / Połowce (Belarus–Poland)" },
+      { label: "Border crossing", value: "Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki — subject to access" },
       { label: "Border crossing time", value: "1–8 hrs depending on season and queues" },
       { label: "Documents required", value: "Schengen visa, valid passport" },
       { label: "Gdańsk Airport", value: "GDN (Lech Wałęsa Airport) — 13 km from the city centre" },
@@ -116,7 +116,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Frequently asked questions",
     faq: [
-      { q: "What is the route to Gdańsk?", a: "We go via Brest – Bruzgi/Kuźnica or Berёza/Połowce border crossing – Warsaw – Gdańsk. Total distance is about 750 km, travel time 8–11 hours excluding the border stop." },
+      { q: "What is the route to Gdańsk?", a: "Travel via Brest / Terespol and Warsaw is one possibility. We select the checkpoint based on current rules and vehicle eligibility. Pieszczatka / Połowce remains suspended and border waiting times cannot be guaranteed." },
       { q: "Do I need a visa to enter Poland?", a: "Citizens of Belarus require a Schengen visa. Please check the latest requirements with the Polish embassy or official sources before travelling." },
       { q: "Can you take me to Sopot or Gdynia too?", a: "Yes — the Tri-City (Gdańsk, Sopot, Gdynia) is compact. We can drop you anywhere in the agglomeration at minimal extra cost." },
       { q: "Can we stop in Warsaw on the way?", a: "Yes — a Warsaw stop is easy to arrange. Let the manager know when booking; an additional charge may apply." },

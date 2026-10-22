@@ -21,14 +21,14 @@ const data: RoutePageData = {
     howTitle: "Как проходит поездка",
     steps: [
       { icon: MapPin, title: "Выезд из Минска", desc: "Водитель заберёт вас по указанному адресу в Минске и направится к латвийской границе." },
-      { icon: ShieldCheck, title: "Граница Беларусь–Латвия", desc: "Переход Урбаны / Патарниеки. Водитель знает актуальные очереди и помогает на КПП." },
+      { icon: ShieldCheck, title: "Граница Беларусь–Латвия", desc: "Григоровщина / Патерниеки — при доступности КПП для пассажирского транспорта. Проверяем электронную очередь и условия въезда перед заказом." },
       { icon: Building2, title: "Рига: любой адрес", desc: "Старый город, аэропорт RIX, отель или Юрмала — доставим точно по назначению." },
     ],
     infoTitle: "Детали маршрута",
     infoRows: [
-      { label: "Маршрут", value: "Минск → Полоцк → Урбаны → Даугавпилс → Рига" },
+      { label: "Маршрут", value: "Минск → Полоцк → Григоровщина / Патерниеки → Рига (если КПП доступен)" },
       { label: "Расстояние", value: "~470 км" },
-      { label: "Пограничный переход", value: "Урбаны / Патарниеки (Беларусь–Латвия)" },
+      { label: "Пограничный переход", value: "Григоровщина / Патерниеки (при действующем допуске)" },
       { label: "Время пересечения границы", value: "1–6 ч в зависимости от очереди" },
       { label: "Необходимые документы", value: "Виза Шенген (для граждан не ЕС), загранпаспорт" },
     ],
@@ -44,7 +44,7 @@ const data: RoutePageData = {
     whyTitle: "Почему ComfortLine",
     whyItems: [
       "Регулярные рейсы в Ригу с 2015 года",
-      "Водитель знает переход Урбаны и очереди",
+      "Проверяем действующие правила КПП Григоровщина / Патерниеки и электронную очередь",
       "Можно добавить остановку в Юрмале",
       "Обратный трансфер: из Риги в Минск",
       "Работаем 24/7, включая праздники",
@@ -76,14 +76,14 @@ const data: RoutePageData = {
     howTitle: "How the transfer works",
     steps: [
       { icon: MapPin, title: "Departure from Minsk", desc: "Your driver picks you up at your Minsk address and heads for the Latvian border." },
-      { icon: ShieldCheck, title: "Belarus–Latvia border", desc: "Urbany / Pāternieki crossing. Your driver knows current queue conditions and assists at the checkpoint." },
+      { icon: ShieldCheck, title: "Belarus–Latvia border", desc: "Grigorovshchina / Pāternieki crossing is possible when access is permitted; we check official border rules and the electronic queue." },
       { icon: Building2, title: "Riga — any address", desc: "Old Town, RIX Airport, your hotel or Jūrmala beach — wherever you need to go." },
     ],
     infoTitle: "Route Details",
     infoRows: [
-      { label: "Route", value: "Minsk → Polotsk → Urbany → Daugavpils → Riga" },
+      { label: "Route", value: "Minsk → Polotsk → Grigorovshchina / Pāternieki → Riga (when accessible)" },
       { label: "Distance", value: "~470 km" },
-      { label: "Border crossing", value: "Urbany / Pāternieki (Belarus–Latvia)" },
+      { label: "Border crossing", value: "Grigorovshchina / Pāternieki (subject to access)" },
       { label: "Border crossing time", value: "1–6 hrs depending on queues" },
       { label: "Documents required", value: "Schengen visa (non-EU citizens), valid passport" },
     ],
@@ -99,7 +99,7 @@ const data: RoutePageData = {
     whyTitle: "Why ComfortLine",
     whyItems: [
       "Regular Riga runs since 2015",
-      "Driver familiar with Urbany crossing and queues",
+      "Current Pāternieki checkpoint and queue rules checked before booking",
       "Optional stop at Jūrmala beach on request",
       "Return transfer Riga → Minsk also available",
       "Available 24/7 including public holidays",

@@ -1,0 +1,72 @@
+name: SEO and indexing integrity
+
+on:
+  push:
+    branches:
+      - fix/seo-indexing-oct-2026
+  pull_request:
+    paths:
+      - "artifacts/comfortline-website/**"
+      - "scripts/check-seo-indexing.mjs"
+      - ".github/workflows/seo-indexing-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check Node source syntax
+        run: |
+          node --check artifacts/comfortline-website/server.mjs
+          node --check scripts/check-seo-indexing.mjs
+      - name: Check sitemap, canonical paths and route guidance
+        run: node scripts/check-seo-indexing.mjs
+
+  build:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: "3000"
+      BASE_PATH: "/"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build TypeScript project references
+        run: pnpm run typecheck:libs
+      - name: Typecheck website
+        run: pnpm --filter @workspace/comfortline-website run typecheck
+      - name: Bundle website (skip unrelated image regeneration)
+        run: pnpm --filter @workspace/comfortline-website exec vite build --config vite.config.ts
+      - name: Prerender route HTML
+        run: pnpm --filter @workspace/comfortline-website exec node scripts/prerender.mjs
+      - name: Validate generated canonical, hreflang and H1
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from "node:assert/strict";
+          import { readFileSync } from "node:fs";
+          for (const route of ["/трансфер-минск-краков", "/трансфер-минск-юрмала", "/лыжный-трансфер", "/minsk-wroclaw-transfer"]) {
+            const html = readFileSync("artifacts/comfortline-website/dist/public/" + route.slice(1) + "/index.html", "utf8");
+            assert(html.includes('<link rel="canonical" href="https://comfortline.by' + encodeURI(route) + '"'), "Wrong canonical: " + route);
+            assert(html.includes('<link rel="alternate" hreflang="ru"'), "Missing RU hreflang: " + route);
+            assert(html.includes('<link rel="alternate" hreflang="en"'), "Missing EN hreflang: " + route);
+            assert(/<h1\b/i.test(html), "Missing prerendered H1: " + route);
+          }
+          console.log("PASS: prerendered canonical, hreflang and H1 on priority routes");
+          NODE
