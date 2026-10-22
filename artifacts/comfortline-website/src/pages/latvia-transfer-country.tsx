@@ -76,7 +76,7 @@ const data: CountryPageData = {
     ],
     infoTitle: "Полезная информация",
     infoRows: [
-      { label: "Пограничный переход", value: "Урбаны / Патарниеки (Беларусь–Латвия)" },
+      { label: "Пограничный переход", value: "Григоровщина / Патерниеки (Беларусь–Латвия, если открыт для поездки)" },
       { label: "Время на границе", value: "1–6 ч в зависимости от очереди" },
       { label: "Необходимые документы", value: "Шенгенская виза, загранпаспорт" },
       { label: "Валюта", value: "Евро (EUR)" },
@@ -174,7 +174,7 @@ const data: CountryPageData = {
     ],
     infoTitle: "Useful information",
     infoRows: [
-      { label: "Border crossing", value: "Urbany / Pāternieki (Belarus–Latvia)" },
+      { label: "Border crossing", value: "Grigorovshchina / Pāternieki (subject to current access)" },
       { label: "Border crossing time", value: "1–6 hrs depending on queues" },
       { label: "Documents required", value: "Schengen visa, valid passport" },
       { label: "Currency", value: "Euro (EUR)" },
@@ -200,8 +200,8 @@ const data: CountryPageData = {
   seo: {
     titleRu: "Трансфер Минск — Латвия | Рига, аэропорт RIX, Юрмала | ComfortLine",
     titleEn: "Minsk to Latvia Transfer | Riga, RIX Airport, Jūrmala | ComfortLine",
-    descRu: "Прямые трансферы из Минска в Латвию: Рига (RIX), центр Риги, Юрмала. Фиксированная цена, граница Урбаны–Патарниеки.",
-    descEn: "Direct transfers from Minsk to Latvia: Riga (RIX), Riga city centre, Jūrmala. Fixed prices, Urbany–Pāternieki border.",
+    descRu: "Прямые трансферы из Минска в Латвию: Рига (RIX), центр Риги, Юрмала. Фиксированная цена, КПП Григоровщина–Патерниеки по актуальному режиму.",
+    descEn: "Direct transfers from Minsk to Latvia: Riga (RIX), Riga city centre, Jūrmala. Fixed prices, Grigorovshchina–Pāternieki checkpoint subject to access.",
     pathRu: "/трансфер-в-латвию",
     pathEn: "/latvia-transfer",
     breadcrumbRu: "Трансферы в Латвию",
