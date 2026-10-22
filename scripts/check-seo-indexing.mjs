@@ -31,6 +31,7 @@ assert.equal(new Set(entries.map((x) => x.pathname)).size, entries.length, "Dupl
 const set = new Set(entries.map((x) => x.pathname));
 
 const changedRoutePages = [
+  ["ski-transfer.tsx", "/лыжный-трансфер", "/ski-transfer"],
   ["minsk-jurmala-transfer.tsx", "/трансфер-минск-юрмала", "/minsk-jurmala-transfer"],
   ["minsk-krakow-transfer.tsx", "/трансфер-минск-краков", "/minsk-krakow-transfer"],
   ["minsk-wroclaw-transfer.tsx", "/трансфер-минск-вроцлав", "/minsk-wroclaw-transfer"],
@@ -68,7 +69,7 @@ for (const file of sitePages) {
     assert(!src.includes(bad), "Outdated or mismatched crossing text in " + file + ": " + bad);
   }
 }
-for (const route of ["/трансфер-минск-юрмала", "/трансфер-минск-краков", "/трансфер-минск-вроцлав", "/трансфер-минск-друскининкай"]) {
+for (const route of ["/трансфер-минск-юрмала", "/трансфер-минск-краков", "/трансфер-минск-вроцлав", "/трансфер-минск-друскининкай", "/лыжный-трансфер"]) {
   assert(routes.includes('"' + route + '": ['), "Missing contextual links for " + route);
 }
 assert(server.includes("must-revalidate"), "Crawl control documents must revalidate");
