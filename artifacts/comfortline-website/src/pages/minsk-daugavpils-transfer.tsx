@@ -7,8 +7,8 @@ const data: RoutePageData = {
     title: "Минск — Даугавпилс",
     subtitle: "Прямой трансфер из Минска в Даугавпилс — второй по величине город Латвии. Грандиозная крепость XIX века, Центр Марка Ротко и многонациональный дух города на берегу Даугавы.",
     stats: [
-      { label: "Расстояние", value: "~300 км" },
-      { label: "Время в пути", value: "3.5–5 ч" },
+      { label: "Расстояние", value: "Уточняем по КПП" },
+      { label: "Время в пути", value: "Зависит от границы" },
       { label: "Граница", value: "Беларусь–Латвия" },
       { label: "Класс авто", value: "Бизнес / Минивэн" },
     ],
@@ -27,7 +27,7 @@ const data: RoutePageData = {
     infoTitle: "Детали маршрута",
     infoRows: [
       { label: "Маршрут", value: "Минск → Полоцк → Григоровщина / Патерниеки → Даугавпилс" },
-      { label: "Расстояние", value: "~300 км" },
+      { label: "Расстояние", value: "По согласованному маршруту" },
       { label: "Пограничный переход", value: "Григоровщина / Патерниеки (Беларусь–Латвия; по актуальному режиму)" },
       { label: "Время пересечения границы", value: "1–6 ч в зависимости от очереди" },
       { label: "Необходимые документы", value: "Виза Шенген, загранпаспорт" },
@@ -44,7 +44,7 @@ const data: RoutePageData = {
     ],
     whyTitle: "Почему ComfortLine",
     whyItems: [
-      "Один из кратчайших маршрутов в Латвию из Минска",
+      "Маршрут и необходимое время согласуем с учётом действующего КПП",
       "Опытные водители маршрута Минск–Латвия",
       "Проверка официальных сведений о КПП Патерниеки и электронной очереди",
       "Возможен продолжительный маршрут до Риги (+220 км)",
@@ -70,8 +70,8 @@ const data: RoutePageData = {
     title: "Minsk — Daugavpils",
     subtitle: "Direct private transfer from Minsk to Daugavpils — Latvia's second-largest city. A vast 19th-century fortress, the Mark Rothko Art Centre and the multicultural spirit of a city on the Daugava river.",
     stats: [
-      { label: "Distance", value: "~300 km" },
-      { label: "Travel time", value: "3.5–5 hrs" },
+      { label: "Distance", value: "Confirmed per route" },
+      { label: "Travel time", value: "Border-dependent" },
       { label: "Border", value: "Belarus–Latvia" },
       { label: "Vehicle class", value: "Business / Minivan" },
     ],
@@ -90,7 +90,7 @@ const data: RoutePageData = {
     infoTitle: "Route Details",
     infoRows: [
       { label: "Route", value: "Minsk → Polotsk → Grigorovshchina / Pāternieki → Daugavpils" },
-      { label: "Distance", value: "~300 km" },
+      { label: "Distance", value: "Depends on accessible checkpoint" },
       { label: "Border crossing", value: "Grigorovshchina / Pāternieki (Belarus–Latvia; subject to access)" },
       { label: "Border crossing time", value: "1–6 hrs depending on queues" },
       { label: "Documents required", value: "Schengen visa, valid passport" },
@@ -107,7 +107,7 @@ const data: RoutePageData = {
     ],
     whyTitle: "Why ComfortLine",
     whyItems: [
-      "One of the shortest Minsk–Latvia routes",
+      "Route and border access confirmed before departure",
       "Experienced drivers on the Minsk–Latvia corridor",
       "Official Pāternieki checkpoint and electronic queue status checked before departure",
       "Easy extension to Riga (+220 km) on the same trip",
@@ -131,8 +131,8 @@ const data: RoutePageData = {
   seo: {
     titleRu: "Трансфер Минск — Даугавпилс | Латвия | ComfortLine",
     titleEn: "Minsk to Daugavpils Transfer | Latvia | ComfortLine",
-    descRu: "Прямой трансфер из Минска в Даугавпилс. ~300 км, 3,5–5 ч. Крепость XIX века, Центр Марка Ротко. КПП Григоровщина–Патерниеки по доступности; цена по запросу.",
-    descEn: "Direct transfer from Minsk to Daugavpils. ~300 km, 3.5–5 hrs. 19th-c fortress, Mark Rothko Art Centre. Grigorovshchina–Pāternieki access checked; individual quote on request.",
+    descRu: "Прямой трансфер из Минска в Даугавпилс. пробег и время по согласованному КПП. Крепость XIX века, Центр Марка Ротко. КПП Григоровщина–Патерниеки по доступности; цена по запросу.",
+    descEn: "Direct transfer from Minsk to Daugavpils. distance and timing confirmed once the checkpoint is selected. 19th-c fortress, Mark Rothko Art Centre. Grigorovshchina–Pāternieki access checked; individual quote on request.",
     pathRu: "/трансфер-минск-даугавпилс",
     pathEn: "/minsk-daugavpils-transfer",
     breadcrumbRu: "Трансфер Минск–Даугавпилс",
