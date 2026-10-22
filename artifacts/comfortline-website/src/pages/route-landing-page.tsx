@@ -85,9 +85,39 @@ const BORDER_SOURCES = [
   { href: "https://mon.declarant.by/#/zone", ru: "Электронная очередь — mon.declarant.by", en: "Live border queue — mon.declarant.by", ruDesc: "Актуальные очереди на КПП в реальном времени", enDesc: "Real-time vehicle queue counts at border checkpoints" },
 ] as const;
 
+// Curated, relevant internal links help visitors explore genuinely related routes.
+// Keep paired RU/EN URLs (rather than linking every page to every other page).
+const RELATED_ROUTES: Record<string, { ru: string; en: string; pathRu: string; pathEn: string }[]> = {
+  "/трансфер-минск-юрмала": [
+    { ru: "Минск — Рига (аэропорт RIX)", en: "Minsk — Riga Airport (RIX)", pathRu: "/трансфер-минск-рига-аэропорт", pathEn: "/minsk-riga-airport" },
+    { ru: "Минск — Вентспилс", en: "Minsk — Ventspils", pathRu: "/трансфер-минск-вентспилс", pathEn: "/minsk-ventspils-transfer" },
+    { ru: "Минск — Лиепая", en: "Minsk — Liepāja", pathRu: "/трансфер-минск-лиепая", pathEn: "/minsk-liepaja-transfer" },
+    { ru: "Все трансферы в Латвию", en: "All Latvia transfers", pathRu: "/трансфер-в-латвию", pathEn: "/latvia-transfer" },
+  ],
+  "/трансфер-минск-краков": [
+    { ru: "Минск — Катовице", en: "Minsk — Katowice", pathRu: "/трансфер-минск-катовице", pathEn: "/minsk-katowice-transfer" },
+    { ru: "Минск — Вроцлав", en: "Minsk — Wrocław", pathRu: "/трансфер-минск-вроцлав", pathEn: "/minsk-wroclaw-transfer" },
+    { ru: "Минск — Познань", en: "Minsk — Poznań", pathRu: "/трансфер-минск-познань", pathEn: "/minsk-poznan-transfer" },
+    { ru: "Все трансферы в Польшу", en: "All Poland transfers", pathRu: "/трансфер-в-польшу", pathEn: "/poland-transfer" },
+  ],
+  "/трансфер-минск-друскининкай": [
+    { ru: "Минск — Вильнюс (аэропорт VNO)", en: "Minsk — Vilnius Airport (VNO)", pathRu: "/трансфер-минск-вильнюс-аэропорт", pathEn: "/minsk-vilnius-airport" },
+    { ru: "Минск — Тракай", en: "Minsk — Trakai", pathRu: "/трансфер-минск-тракай", pathEn: "/minsk-trakai-transfer" },
+    { ru: "Минск — Каунас", en: "Minsk — Kaunas", pathRu: "/трансфер-минск-каунас", pathEn: "/minsk-kaunas-transfer" },
+    { ru: "Все трансферы в Литву", en: "All Lithuania transfers", pathRu: "/трансфер-в-литву", pathEn: "/lithuania-transfer" },
+  ],
+  "/трансфер-минск-вроцлав": [
+    { ru: "Минск — Познань", en: "Minsk — Poznań", pathRu: "/трансфер-минск-познань", pathEn: "/minsk-poznan-transfer" },
+    { ru: "Минск — Краков", en: "Minsk — Kraków", pathRu: "/трансфер-минск-краков", pathEn: "/minsk-krakow-transfer" },
+    { ru: "Минск — Катовице", en: "Minsk — Katowice", pathRu: "/трансфер-минск-катовице", pathEn: "/minsk-katowice-transfer" },
+    { ru: "Все трансферы в Польшу", en: "All Poland transfers", pathRu: "/трансфер-в-польшу", pathEn: "/poland-transfer" },
+  ],
+};
+
 export function RouteLandingPage({ data }: Props) {
   const { lang } = useLang();
   const c = data[lang];
+  const relatedRoutes = RELATED_ROUTES[data.seo.pathRu] || [];
   const isRu = lang === "ru";
   const seoTitle = isRu ? data.seo.titleRu : data.seo.titleEn;
   const seoDesc = isRu ? data.seo.descRu : data.seo.descEn;
@@ -274,6 +304,31 @@ export function RouteLandingPage({ data }: Props) {
             ))}
           </div>
         </motion.section>
+
+        {/* Contextual links to nearby destinations, only for genuinely related routes. */}
+        {relatedRoutes.length > 0 && (
+          <section aria-label={isRu ? "Похожие маршруты" : "Related destinations"}>
+            <h2 className="text-2xl font-bold text-foreground mb-3">
+              {isRu ? "Другие направления для поездки" : "Explore related destinations"}
+            </h2>
+            <p className="text-muted-foreground text-sm mb-5">
+              {isRu
+                ? "Сравните направления и укажите нужный адрес при бронировании. Наличие поездок и подходящий пограничный переход подтверждаются индивидуально."
+                : "Explore alternative destinations and enter your pickup and drop-off addresses. Journey availability and border access are confirmed individually."}
+            </p>
+            <nav className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {relatedRoutes.map((route) => (
+                <a
+                  key={route.pathRu}
+                  href={isRu ? route.pathRu : route.pathEn}
+                  className="block rounded-xl border border-border bg-card px-5 py-4 text-sm font-semibold text-foreground hover:border-primary/50 hover:text-primary transition-colors"
+                >
+                  {isRu ? route.ru : route.en} <span aria-hidden="true">→</span>
+                </a>
+              ))}
+            </nav>
+          </section>
+        )}
 
         {/* FAQ */}
         {c.faq && c.faq.length > 0 && (
