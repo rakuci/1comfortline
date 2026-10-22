@@ -15,7 +15,7 @@ const content = {
     badge: "Трансфер",
     title: "Трансфер Минск — Аэропорт Риги (RIX)",
     subtitle: "Индивидуальный трансфер из Минска в международный аэропорт Риги (RIX). Подача от двери, фиксированная цена, опытный водитель и помощь на границе Беларусь–Латвия.",
-    seoIntro: "Заказать трансфер Минск — Рига аэропорт можно онлайн или по телефону. Цена фиксированная, без счётчика. Маршрут ~470 км через погранпереход Григоровщина / Патерниеки обычно занимает 5–8 часов в зависимости от очередей. Рижский международный аэропорт — крупнейший хаб Прибалтики с прямыми рейсами в Западную Европу, Скандинавию и СНГ.",
+    seoIntro: "Заказать трансфер Минск — Рига аэропорт можно онлайн или по телефону. Цена фиксированная, без счётчика. Маршрут ~470 км через погранпереход Григоровщина / Патерниеки возможен при действующем допуске. Время поездки зависит от границы; статус КПП и электронной очереди проверяем перед подтверждением. Рижский международный аэропорт — крупнейший хаб Прибалтики с прямыми рейсами в Западную Европу, Скандинавию и СНГ.",
     stats: [
       { label: "Расстояние", value: "~470 км" },
       { label: "Время в пути", value: "5–8 ч" },
@@ -25,7 +25,7 @@ const content = {
     howTitle: "Как проходит трансфер",
     steps: [
       { icon: MapPin, title: "Подача от двери", desc: "Водитель приедет к вашему адресу в Минске точно в назначенное время." },
-      { icon: ShieldCheck, title: "Пересечение границы", desc: "Беларусь–Латвия через КПП Григоровщина / Патерниеки. Водитель знает актуальные очереди и маршруты объезда." },
+      { icon: ShieldCheck, title: "Пересечение границы", desc: "Беларусь–Латвия через КПП Григоровщина / Патерниеки — при доступности для пассажирского транспорта. Перед поездкой проверяем режим КПП и электронную очередь." },
       { icon: Plane, title: "Прибытие в аэропорт", desc: "Доставим прямо к терминалу аэропорта Риги с запасом времени до вылета." },
     ],
     airportTitle: "Аэропорт Риги (RIX)",
@@ -69,7 +69,7 @@ const content = {
     badge: "Transfer",
     title: "Minsk to Riga Airport (RIX) Transfer",
     subtitle: "Private door-to-door transfer from Minsk to Riga International Airport (RIX). Fixed price, professional driver, full assistance at the Belarus–Latvia border.",
-    seoIntro: "Book a Minsk to Riga airport transfer online or by phone. Fixed price, no meter, no surge. The ~470 km route via the Grigorievka / Paternieki border crossing typically takes 5–8 hours depending on queues. Riga International Airport is the Baltic region's largest hub with direct flights to Western Europe, Scandinavia and beyond.",
+    seoIntro: "Book a Minsk to Riga airport transfer online or by phone. Fixed price, no meter, no surge. The ~470 km route via the Grigorovshchina / Pāternieki crossing depends on current access and queue rules. The border status is checked before confirming each journey. Riga International Airport is the Baltic region's largest hub with direct flights to Western Europe, Scandinavia and beyond.",
     stats: [
       { label: "Distance", value: "~470 km" },
       { label: "Travel time", value: "5–8 hrs" },
@@ -79,7 +79,7 @@ const content = {
     howTitle: "How the transfer works",
     steps: [
       { icon: MapPin, title: "Door pickup", desc: "Your driver arrives at your Minsk address exactly on time." },
-      { icon: ShieldCheck, title: "Border crossing", desc: "Belarus–Latvia at the Grigorievka / Paternieki checkpoint. Your driver monitors queue conditions and knows alternative routes." },
+      { icon: ShieldCheck, title: "Border crossing", desc: "Belarus–Latvia at the Grigorovshchina / Pāternieki checkpoint, subject to vehicle admission. We verify official border and electronic queue rules before departure." },
       { icon: Plane, title: "Airport arrival", desc: "Delivered directly to the Riga Airport terminal well ahead of your flight." },
     ],
     airportTitle: "Riga Airport (RIX)",
