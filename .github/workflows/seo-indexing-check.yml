@@ -1,0 +1,31 @@
+name: SEO and indexing integrity
+
+on:
+  push:
+    branches:
+      - fix/seo-indexing-oct-2026
+  pull_request:
+    paths:
+      - "artifacts/comfortline-website/**"
+      - "scripts/check-seo-indexing.mjs"
+      - ".github/workflows/seo-indexing-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check Node source syntax
+        run: |
+          node --check artifacts/comfortline-website/server.mjs
+          node --check scripts/check-seo-indexing.mjs
+      - name: Check sitemap, canonical paths and route guidance
+        run: node scripts/check-seo-indexing.mjs
