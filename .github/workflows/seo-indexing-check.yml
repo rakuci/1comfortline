@@ -29,3 +29,26 @@ jobs:
           node --check scripts/check-seo-indexing.mjs
       - name: Check sitemap, canonical paths and route guidance
         run: node scripts/check-seo-indexing.mjs
+
+  build:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PORT: "3000"
+      BASE_PATH: "/"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+      - name: Install workspace dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Typecheck website
+        run: pnpm --filter @workspace/comfortline-website run typecheck
+      - name: Build and prerender website
+        run: pnpm --filter @workspace/comfortline-website run build
