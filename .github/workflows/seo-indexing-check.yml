@@ -48,6 +48,8 @@ jobs:
           cache: pnpm
       - name: Install workspace dependencies
         run: pnpm install --frozen-lockfile
+      - name: Build TypeScript project references
+        run: pnpm run typecheck:libs
       - name: Typecheck website
         run: pnpm --filter @workspace/comfortline-website run typecheck
       - name: Build and prerender website
