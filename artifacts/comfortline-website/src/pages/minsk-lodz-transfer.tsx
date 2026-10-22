@@ -21,14 +21,14 @@ const data: RoutePageData = {
     howTitle: "Как проходит поездка",
     steps: [
       { icon: MapPin, title: "Выезд из Минска", desc: "Водитель заберёт вас по указанному адресу в Минске и направится к польской границе по оптимальному маршруту." },
-      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Переход Брузги / Кузница или Берёза / Половцы. Водитель знает актуальные очереди и помогает на КПП." },
+      { icon: ShieldCheck, title: "Граница Беларусь–Польша", desc: "Возможные КПП: Брест / Тересполь, Брузги / Кузница или Берестовица / Бобровники (по текущим правилам допуска автомобиля). Песчатка / Половцы закрыт." },
       { icon: Building2, title: "Лодзь: любой адрес", desc: "Довезём до отеля у Пётрковской, аэропорта LCJ или любого другого адреса в городе." },
     ],
     infoTitle: "Детали маршрута",
     infoRows: [
       { label: "Маршрут", value: "Минск → Брест → Тересполь → Варшава → Лодзь" },
       { label: "Расстояние", value: "~650 км" },
-      { label: "Пограничный переход", value: "Брузги / Кузница или Берёза / Половцы (Беларусь–Польша)" },
+      { label: "Пограничный переход", value: "Брест / Тересполь, Брузги / Кузница либо Берестовица / Бобровники — по доступности" },
       { label: "Время пересечения границы", value: "1–8 ч в зависимости от сезона и очереди" },
       { label: "Необходимые документы", value: "Виза Шенген, загранпаспорт" },
       { label: "Аэропорт Лодзи", value: "LCJ (им. Владислава Реймонта) — 6 км от центра" },
@@ -53,7 +53,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Часто задаваемые вопросы",
     faq: [
-      { q: "Какой маршрут до Лодзи?", a: "Едем через Брест — КПП Брузги/Кузница или Берёза/Половцы — Варшаву — Лодзь. Расстояние около 650 км, время в пути 7–9 ч без учёта границы." },
+      { q: "Какой маршрут до Лодзи?", a: "Маршрут через Брест / Тересполь и Варшаву является одним из вариантов. КПП выбираем по текущему режиму и допуску пассажирского автомобиля. Песчатка / Половцы официально закрыт; пограничное ожидание заранее не гарантируем." },
       { q: "Нужна ли виза в Польшу?", a: "Гражданам Беларуси требуется шенгенская виза. Уточняйте актуальные требования в посольстве Польши или на официальных сайтах перед поездкой." },
       { q: "Что такое «Мануфактура»?", a: "Manufaktura — один из крупнейших арт- и торговых центров Польши, расположенный в отреставрированных кирпичных корпусах хлопкопрядильной фабрики Израэля Познанского XIX века. Здесь музеи, кинотеатры, рестораны и огромная площадь для мероприятий." },
       { q: "Можно ли остановиться в Варшаве по дороге?", a: "Да — Варшава находится примерно в 130 км от Лодзи, маршрут проходит через неё. Остановка почти не удлиняет поездку — договоритесь с менеджером при бронировании." },
@@ -84,14 +84,14 @@ const data: RoutePageData = {
     howTitle: "How the transfer works",
     steps: [
       { icon: MapPin, title: "Departure from Minsk", desc: "Your driver picks you up at your Minsk address and heads for the Polish border via the fastest route." },
-      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Bruzgi / Kuźnica or Berёza / Połowce crossing. Your driver knows current queue conditions and assists at the checkpoint." },
+      { icon: ShieldCheck, title: "Belarus–Poland border", desc: "Possible checkpoints: Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki (subject to vehicle eligibility). Pieszczatka / Połowce is suspended." },
       { icon: Building2, title: "Łódź — any address", desc: "We drop you at your hotel near Piotrkowska Street, Łódź Airport (LCJ) or any other address in the city." },
     ],
     infoTitle: "Route Details",
     infoRows: [
       { label: "Route", value: "Minsk → Brest → Terespol → Warsaw → Łódź" },
       { label: "Distance", value: "~650 km" },
-      { label: "Border crossing", value: "Bruzgi / Kuźnica or Berёza / Połowce (Belarus–Poland)" },
+      { label: "Border crossing", value: "Brest / Terespol, Bruzgi / Kuźnica or Berestovitsa / Bobrowniki — subject to access" },
       { label: "Border crossing time", value: "1–8 hrs depending on season and queues" },
       { label: "Documents required", value: "Schengen visa, valid passport" },
       { label: "Łódź Airport", value: "LCJ (Władysław Reymont Airport) — 6 km from the centre" },
@@ -116,7 +116,7 @@ const data: RoutePageData = {
     ],
     faqTitle: "Frequently asked questions",
     faq: [
-      { q: "What is the route to Łódź?", a: "We go via Brest – Bruzgi/Kuźnica or Berёza/Połowce border crossing – Warsaw – Łódź. Total distance is about 650 km, travel time 7–9 hours excluding the border stop." },
+      { q: "What is the route to Łódź?", a: "Travel via Brest / Terespol and Warsaw is one possibility. We select the checkpoint based on current rules and vehicle eligibility. Pieszczatka / Połowce remains suspended and border waiting times cannot be guaranteed." },
       { q: "Do I need a visa to enter Poland?", a: "Citizens of Belarus require a Schengen visa. Please check the latest requirements with the Polish embassy or official sources before travelling." },
       { q: "What is Manufaktura?", a: "Manufaktura is one of Poland's largest arts and entertainment complexes, built inside the meticulously restored 19th-century red-brick factory halls of Izrael Poznański's cotton mill. It houses museums, cinemas, restaurants and a huge events square." },
       { q: "Can we stop in Warsaw on the way?", a: "Yes — Warsaw is about 130 km from Łódź and the route passes through it. A stop adds very little extra time; just let the manager know when booking." },
