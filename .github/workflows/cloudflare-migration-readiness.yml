@@ -1,0 +1,68 @@
+name: Read-only comfortline.by migration checks
+
+on:
+  push:
+    branches:
+      - audit/cloudflare-migration-readiness-2026-11-04
+    paths:
+      - .github/workflows/cloudflare-migration-readiness.yml
+      - CLOUDFLARE_MIGRATION_READINESS_2026-11-04.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-site-and-dns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm repository migration prerequisites
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f artifacts/comfortline-website/vite.config.ts
+          test -f artifacts/comfortline-website/scripts/prerender.mjs
+          test -f artifacts/comfortline-website/server.mjs
+          test -f artifacts/api-server/src/routes/booking.ts
+          test -f artifacts/api-server/src/routes/contact.ts
+          echo "SOURCE_BRANCH=${GITHUB_REF_NAME}"
+          echo "SOURCE_COMMIT=${GITHUB_SHA}"
+          echo "Frontend, prerender and both critical email endpoints present."
+      - name: Read current public DNS records without modifying them
+        shell: bash
+        run: |
+          set -uo pipefail
+          for host in comfortline.by bycomfortline.com; do
+            echo "::group::DNS host ${host}"
+            echo "NS:"; dig +time=4 +tries=2 +short NS "${host}" || true
+            echo "MX:"; dig +time=4 +tries=2 +short MX "${host}" || true
+            echo "A:"; dig +time=4 +tries=2 +short A "${host}" || true
+            echo "CNAME www:"; dig +time=4 +tries=2 +short CNAME "www.${host}" || true
+            echo "SPF (present?, count, authorized providers):"
+            TXT=$(dig +time=4 +tries=2 +short TXT "${host}" | grep -i 'v=spf1' || true)
+            if [[ -n "$TXT" ]]; then printf '%s\n' "$TXT" | sed 's/[[:space:]]\+/ /g'; else echo "No SPF TXT found"; fi
+            echo "DMARC (record present?):"
+            DMARC=$(dig +time=4 +tries=2 +short TXT "_dmarc.${host}" || true)
+            if [[ -n "$DMARC" ]]; then echo "yes"; else echo "no"; fi
+            echo "::endgroup::"
+          done
+      - name: Read-only HTTP status, TLS and route checks
+        shell: bash
+        run: |
+          set -uo pipefail
+          for host in comfortline.by www.comfortline.by; do
+            for path in / /en /blog /robots.txt /sitemap.xml /api/health /this-page-does-not-exist-migration-test-92814; do
+              url="https://${host}${path}"
+              echo "PROBE ${url}"
+              curl --location --max-time 18 --silent --show-error \
+                --output /tmp/comfortline-audit-body \
+                --write-out 'RESULT status=%{http_code} final=%{url_effective} mime=%{content_type} tls=%{ssl_verify_result} redirects=%{num_redirects} bytes=%{size_download}\n' \
+                "${url}" || echo "RESULT network_error=true"
+              if [[ "${path}" == "/api/health" ]]; then
+                echo "API_BODY_REDACTED"
+              fi
+            done
+          done
+          echo "This audit does not change DNS, Workers, Replit or email."
